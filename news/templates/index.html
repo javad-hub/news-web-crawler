@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <title>News</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+     
+    </style>
+</head>
+<body>
+    <div class="jumbotron">
+        <center><h1 class="mb-2">اخبار روز</h1>
+            <a href="{% url 'more'%}" class="btn btn-info mb-3">اخبار سایت های دیگر</a>
+           <a href="/" class="btn btn-info mb-3">تازه سازی</a>
+           <form method='GET' action="{% url 'search'%}">
+            <input class="form-control mb-2" type='text' placeholder="جست و جو با کلمه کلیدی..." name="q">
+            <input class="btn btn-outline-success" type="submit" value="جست وجو">
+    
+        </form>
+    </center>
+    </div>
+    <div class="container d-flex align-items-center justify-content-center">
+        <div class="row">
+            <div class="col-3">
+                    <h3 class="text-center mb-5">اخبار فوری</h3>
+                    {% for n in foori_news %}
+                    <h5 class="text-center"> - <a href="https://www.khabarfoori.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C-145"> {{n}} </a></h5>
+                    <hr>
+                    {% endfor %}
+                    <br>
+            </div>
+            <div class="col-3">
+            <h3 class="text-center mb-5">مشرق نیوز</h3>
+                    {% for n in mash_news %}
+                    <h5 class="text-center"> - <a href="https://www.mashreghnews.ir/service/economic-news"> {{n}} </a></h5>
+                    <hr>
+                    {% endfor %}
+                    
+                    <br>
+        </div>
+
+        <div class="col-3">
+            <h3 class="text-center mb-5">باشگاه خبرنگاران جوان</h3>
+                    {% for n in javan_news %}
+                    <h5 class="text-center"> - <a href="https://www.yjc.ir/"> {{n}} </a></h5>
+                    <hr>
+                    {% endfor %}
+                    
+                    <br>
+        </div>
+
+        <div class="col-3">
+            <h3 class="text-center mb-5">خبرگزاری فارس</h3>
+                    {% for n in fars_news %}
+                    <h5 class="text-center"> - <a href="https://www.farsnews.ir/economy"> {{n}} </a></h5>
+                    <hr>
+                    {% endfor %}
+                    
+                    <br>
+        </div>
+
+        </div>
+ 
+ 
+</div>
+    <script
+src="http://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
